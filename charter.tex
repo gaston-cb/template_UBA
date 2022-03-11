@@ -162,135 +162,100 @@ Adicionalmente, al estar en un lugar remoto, dentro del organismo, debe poseer t
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} 
-Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
- 
-Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
-
-\begin{itemize}
-\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
-\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
-\end{itemize}
-
-Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
-
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
 %\label{tab:interesados}
+\renewcommand {\arrayrulewidth}{1pt}
 \begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
-Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
+	Auspiciante   & -                 &  -             	& -        	\\ \hline
+	Cliente       & -  			      &	 -				& -       	\\ \hline
+	Impulsor      &                   &              	&        	\\ \hline
+	Responsable   & \authorname       & IAR        	    & Ing desarrollo firmware/hardware 	\\ \hline
+	Colaboradores & Martín Salibe     & IAR             & Responsable de transferencia de tecnología        	\\ \hline
+	Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
+	Equipo        & Eliseo Diaz \newline 
+	Matias Contrera          & IAR              	& Responsables de fabricación de PCB y 3D  	\\ \hline
+	Opositores    &  -                 & -             	& -        	\\ \hline
+	Usuario final & Facundo Aquino     & IAR           	& Operador de antena  y diseñador PCB    	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los Orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
-\begin{itemize}
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
-\end{itemize}
-
-\end{consigna}
 
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
+	El propósito de este proyecto es realizar un sistema de apuntamiento para una antena (ver figura \ref{fig:antena_mia}),esta antena, debe ponerse en el cenit, en caso de no realizarse ningún tipo de seguimiento. Una vez finalizado este desarrollo, se va a  replicar en otras tres antenas de iguales características. 
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-\end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
+El proyecto incluye los siguientes alcances 
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+\begin{itemize}
+	\item Desarrollo de firmware/software/hardware para realizar el movimiento de los motores de posición 
+	\item  Documentación de software/firmware/hardware por separado
+	\item  Desarrollo del protocolo de comunicación entre encoders y PC
+	\item  Documentación sobre Hardware y software. 
+	\item  Integración del producto con el sistema mecánico de movimiento
+	\item Planes de testing para software y hardware. 
+	
+\end{itemize}
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna}
+El proyecto, no contempla aspectos relacionados a la seguridad de la información. 
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
+	Para el desarrollo, se supone que se tiene acceso a los siguientes items : 
+	\begin{itemize}
+		\item Máquina con sistema operativo linux o similar. 
+		\item Los recursos de hardware y software se proveen por la institución, así como su documentación
+		\item Se tiene acceso a los desarrollos previos realizados para el control de la antena. 
+		\item El sistema mecánico se debe armar antes de octubre/noviembre 2022, que esta a cargo del departamento de mecánica. En caso de no realizarse, se verá la forma de simular en algún tipo de software
+%		\item 
+		\item El proyecto esta inmerso dentro de un plan estratégico dentro de la institución
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
-
-\begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
-\end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
+	\end{itemize}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
-
 \begin{enumerate}
 	\item Requerimientos funcionales
 		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
+			\item Debe tener un sistema de control de posición
+			\item Debe poseer un Webserver embebido para monitoreo de variables ambientales y indicar su estado de operación (tracking, untracking, zenit, y calibrate). 
+			\item Debe implementarse lecturas de posicionamiento, lecturas de viento, temperatura y potencia consumida por el mismo. 
+			\item Debe conectarse a red local LAN, mediante cable ethernet RJ45 
+			\item  Cortar el uso cuando el viento supere la velocidad máxima de operación mecánica de la antena, y volverla a su posición de equilibrio en el zenit 
+			\item Sistema de calibración a demanda por el operario de la antena 
+			\item Realizar de un software central con capacidad de manejar los periféricos del single board computer, y lectura de viento, tensión, corriente, y posición angular de la antena
+			\item Realizar un software que se pueda conectar con los programas Gpredict, Stelarium y el existente en el IAR para el manejo de las antenas principales. 
+			\item En caso de agregarse software, se debe actualizar manualmente. 
+			\item Solo puede realizar una operación de seguimiento. En caso de estar realizando el seguimiento de algún satelite/radiofuente, se le debe informar de dicha operación, y el operario tendrá que esperar que se termine la operación actual  
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
-			\item Requerimiento 1
-			\item Requerimiento 2 (prioridad menor)
+			\item Documentación sobre protocolos de comunicación via ethernet de los programas involucrados, y trama de mensajes 
+			\item Manual de operación de la antena para operarios 
+			\item Manual de operación de actualización de software 
+			\item Documentación de software y hardware. 
+			\item Manual de procedimientos de testing de software y hardware	
+	\end{enumerate}
+	\item Requerimiento de testing
+		\begin{enumerate}
+			\item Medir señal de control de posición de los motores
+			\item Webserver embebido, testing de señales sobre la placa con osciloscopio
+			\item Realizar el seguimiento de una radiofuente, e intentar realizar más de una conexión simultanea. 
+			\item Ver la señal de control mínima a partir de la cual los motores son capaces de mover la antena. 
+			\item Realizar experiencia de rebote lunar con stellarium (esto ya se ha realizado con anterioridad con las antenas principales de la institución). 
+
 		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
 \end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
