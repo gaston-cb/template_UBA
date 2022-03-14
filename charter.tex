@@ -121,14 +121,16 @@ En este trabajo, se realiza un sistema de posicionamiento y telemetría para una
 	\label{fig:antena_mia}
 \end{figure}
 
-Este posicionador pertenece a dos proyectos principales y estratégicos dentro de la institución. El caso del interferometro, permite mejorar la recepción de las antenas principales de la institución. En el caso de la estación terrena, permite vender el servicio a terceros, y esto permite un ingreso constante al organismo. 
+Este posicionador pertenece a dos proyectos principales y estratégicos dentro de la institución. 
+En el caso del interferómetro, se trata de una nueva tecnología hasta ahora inexistente en el observatorio y permitiría incrementar la capacidad científica, tecnológica y observacional del Instituto; mientras que la estación terrena, permitirá establecer enlaces de comunicación con pequeños satélites como parte de las actividades del IAR en el segmento aeroespacial.
+%El caso del interferometro, permite mejorar la recepción de las antenas principales de la institución. En el caso de la estación terrena, permite vender el servicio a terceros, y esto permite un ingreso constante al organismo. 
 
 Actualmente el posicionador que se ha desarrollado se encuentra instalado pero tiene la limitación de funcionar con un solo programa (Gpredict), y no puede realizar el seguimiento de radiofuentes. A Este software debe agregar estas radiofuentes, o adicionarle la comunicación con otro software de seguimiento.  
 
 Se desea mejorar incluyendo independencia de software, o mecanismos de manejo remoto, mediante protocolos existentes para las antenas principales. En la figura \ref{fig:antenas_main} se muestran las dos antenas principales del organismo. 
 
 %% 
-El sistema de apuntamiento, debe realizar el seguimiento automático de los puntos del cielo, ya sean satélites o radiofuentes. En el caso de no realizar seguimientos, debe permanecer en la posición denominada cenit. En este caso, el sistema debe ser a lazo cerrado todo el tiempo, siguiendo una referencia, que viene dada por una computadora/software, dentro de ciertos margenes. 
+El sistema de apuntamiento, debe realizar el seguimiento automático (de posición astronómica) de los puntos del cielo, ya sean satélites o radiofuentes. En el caso de no realizar seguimientos, debe permanecer en la posición denominada cenit.En este caso, el sistema debe ser a lazo cerrado todo el tiempo, siguiendo una referencia, que viene dada por una computadora/software, dentro de ciertos margenes. 
 Adicionalmente, al estar en un lugar remoto, dentro del organismo, debe poseer telemetria, ya que pueden existir condiciones climaticas adversas en las cuales la antena no podría operarse (ejemplo, viento, granizo, ya que en estos casos, la antena actúa como una vela de barco). El sistema a realizar tiene el diagrama en bloques mostrado en la figura \ref{fig:bloques_sistema} 
 %imagen de la antena % 
 
@@ -180,7 +182,7 @@ Adicionalmente, al estar en un lugar remoto, dentro del organismo, debe poseer t
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
-	El propósito de este proyecto es realizar un sistema de apuntamiento para una antena (ver figura \ref{fig:antena_mia}),esta antena, debe ponerse en el cenit, en caso de no realizarse ningún tipo de seguimiento. Una vez finalizado este desarrollo, se va a  replicar en otras tres antenas de iguales características. 
+	El propósito de este proyecto es realizar un sistema de apuntamiento para una antena (ver figura \ref{fig:antena_mia}),esta antena, debe ponerse en el cenit, en caso de no realizarse ningún tipo de seguimiento, ya que este punto, es el punto de equilibrio mecánico. Una vez finalizado este desarrollo, se va a  replicar en otras tres antenas de iguales características. 
 
 
 \section{4. Alcance del proyecto}
@@ -191,7 +193,6 @@ El proyecto incluye los siguientes alcances
 	\item Desarrollo de firmware/software/hardware para realizar el movimiento de los motores de posición 
 	\item  Documentación de software/firmware/hardware por separado
 	\item  Desarrollo del protocolo de comunicación entre encoders y PC
-	\item  Documentación sobre Hardware y software. 
 	\item  Integración del producto con el sistema mecánico de movimiento
 	\item Planes de testing para software y hardware. 
 	
@@ -210,6 +211,8 @@ El proyecto, no contempla aspectos relacionados a la seguridad de la informació
 		\item El sistema mecánico se debe armar antes de octubre/noviembre 2022, que esta a cargo del departamento de mecánica. En caso de no realizarse, se verá la forma de simular en algún tipo de software
 %		\item 
 		\item El proyecto esta inmerso dentro de un plan estratégico dentro de la institución
+		\item Los componentes se encuentran en el mercado local, y en el caso de importarse, se realizará con la suficiente antelación. 
+		\item La estructura mecánica de movimiento de la antena, estará lista antes de la finalización del presente proyecto. 
 
 	\end{itemize}
 
@@ -224,27 +227,33 @@ El proyecto, no contempla aspectos relacionados a la seguridad de la informació
 			\item Debe implementarse lecturas de posicionamiento, lecturas de viento, temperatura y potencia consumida por el mismo. 
 			\item Debe conectarse a red local LAN, mediante cable ethernet RJ45 
 			\item  Cortar el uso cuando el viento supere la velocidad máxima de operación mecánica de la antena, y volverla a su posición de equilibrio en el zenit 
-			\item Sistema de calibración a demanda por el operario de la antena 
+			\item Debe tener un sistema de calibración a demanda por el operario de la antena 
 			\item Realizar de un software central con capacidad de manejar los periféricos del single board computer, y lectura de viento, tensión, corriente, y posición angular de la antena
 			\item Realizar un software que se pueda conectar con los programas Gpredict, Stelarium y el existente en el IAR para el manejo de las antenas principales. 
-			\item En caso de agregarse software, se debe actualizar manualmente. 
+			\item En caso de adicionar otro programa distinto(Gpredict, stellarium o ya existente en el IAR) se debe actualizar el software del sistema posicionador. 
 			\item Solo puede realizar una operación de seguimiento. En caso de estar realizando el seguimiento de algún satelite/radiofuente, se le debe informar de dicha operación, y el operario tendrá que esperar que se termine la operación actual  
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
-			\item Documentación sobre protocolos de comunicación via ethernet de los programas involucrados, y trama de mensajes 
+			\item Debe seguir la numeración y formato de los documentos establecidos por el IAR. 
+			\item Documentación sobre protocolos de comunicación via ethernet y de los programas involucrados, y trama de mensajes 
 			\item Manual de operación de la antena para operarios 
-			\item Manual de operación de actualización de software 
+			\item Manual de operación para actualización de software 
 			\item Documentación de software y hardware. 
 			\item Manual de procedimientos de testing de software y hardware	
 	\end{enumerate}
+	\item Requerimientos de interfaces
+		\begin{enumerate}
+			\item Los encoders estarán alineados con los dos ejes principales de movimiento de la antena 
+			\item Deberá utilizarse una red electrica para conectar el posicionador
+		\end{enumerate}
 	\item Requerimiento de testing
 		\begin{enumerate}
 			\item Medir señal de control de posición de los motores
 			\item Webserver embebido, testing de señales sobre la placa con osciloscopio
 			\item Realizar el seguimiento de una radiofuente, e intentar realizar más de una conexión simultanea. 
 			\item Ver la señal de control mínima a partir de la cual los motores son capaces de mover la antena. 
-			\item Realizar experiencia de rebote lunar con stellarium (esto ya se ha realizado con anterioridad con las antenas principales de la institución). 
+			\item Realizar experiencia de rebote lunar con stellarium (esto ya se ha realizado con anterioridad con las antenas principales de la institución). El objetivo es corroborar la calibración del mismo y la comunicación con el software  
 
 		\end{enumerate}
 \end{enumerate}
