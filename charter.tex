@@ -103,28 +103,20 @@ Se adjunta a esta acta la planificación inicial.
 \begin{tabular}{ccc}
 \begin{tabular}[c]{@{}c@{}}Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
 \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
-\begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
-\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
+
+%\begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
+%\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
 \end{tabular}
 \end{table}
-
-
-
 
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-%El proyecto pertenece a dos áreas distintas dentro de la misma institución,y por esto, se debe realizar un análisis de los puntos de confluencia y divergencia de los mismos, y compatibilizar las necesidades de estas áreas, en un único dispositivo.  
-
-
-
 En este trabajo, se realiza un sistema de posicionamiento y telemetría para una antena parábolica de 5 m de diámetro. Esta antena, pertenece a un grupo de antenas, las cuales forman un interferometro. Este proyecto, es un subsistema del proyecto principal, denominado Interferometro MIA (Multipurpose Interferometric Array) y Estación terrena, dentro de la institución. La antena perteneciente a la estación terrena es idéntica a la del interferometro. En principio, se están construyendo tres antenas. Se realiza un único desarrollo, y se replica para cada antena.  
-
-
 %imagen de antena de interferómetro mia %
-\begin{figure}[htpb]
+\begin{figure}[H]
 	\centering 
-	\includegraphics[width=.8\textwidth,height=8cm,keepaspectratio]{Figuras/seccion_1/antena_MIA.png}
+	\includegraphics[height = 8cm ]{Figuras/seccion_1/antena_MIA.png}
 	\caption{Antena en proceso de construcción para interferómetro MIA}
 	\label{fig:antena_mia}
 \end{figure}
@@ -134,7 +126,6 @@ Este posicionador pertenece a dos proyectos principales y estratégicos dentro d
 Actualmente el posicionador que se ha desarrollado se encuentra instalado pero tiene la limitación de funcionar con un solo programa (Gpredict), y no puede realizar el seguimiento de radiofuentes. A Este software debe agregar estas radiofuentes, o adicionarle la comunicación con otro software de seguimiento.  
 
 Se desea mejorar incluyendo independencia de software, o mecanismos de manejo remoto, mediante protocolos existentes para las antenas principales. En la figura \ref{fig:antenas_main} se muestran las dos antenas principales del organismo. 
-
 
 %% 
 El sistema de apuntamiento, debe realizar el seguimiento automático de los puntos del cielo, ya sean satélites o radiofuentes. En el caso de no realizar seguimientos, debe permanecer en la posición denominada cenit. En este caso, el sistema debe ser a lazo cerrado todo el tiempo, siguiendo una referencia, que viene dada por una computadora/software, dentro de ciertos margenes. 
@@ -172,12 +163,13 @@ Adicionalmente, al estar en un lugar remoto, dentro del organismo, debe poseer t
 	Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
 	Auspiciante   & -                 &  -             	& -        	\\ \hline
 	Cliente       & -  			      &	 -				& -       	\\ \hline
-	Impulsor      &                   &              	&        	\\ \hline
+	Impulsor      &  -                & -             	& -       	\\ \hline
 	Responsable   & \authorname       & IAR        	    & Ing desarrollo firmware/hardware 	\\ \hline
-	Colaboradores & Martín Salibe     & IAR             & Responsable de transferencia de tecnología        	\\ \hline
+	Colaboradores & Martín Salibe     & IAR             & Responsable de transferencia \\
+				  &  Guillermo Gancio & IAR             & Responsable de observatorio \\ \hline
 	Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
 	Equipo        & Eliseo Diaz \newline 
-	Matias Contrera          & IAR              	& Responsables de fabricación de PCB y 3D  	\\ \hline
+	Matias Contreras          & IAR              	& Responsables de fabricación de PCB y 3D  	\\ \hline
 	Opositores    &  -                 & -             	& -        	\\ \hline
 	Usuario final & Facundo Aquino     & IAR           	& Operador de antena  y diseñador PCB    	\\ \hline
 \end{tabularx}
@@ -205,7 +197,7 @@ El proyecto incluye los siguientes alcances
 	
 \end{itemize}
 
-El proyecto, no contempla aspectos relacionados a la seguridad de la información. 
+El proyecto, no contempla aspectos relacionados a la seguridad de la información, y selección de los motores para el posicionamiento.  
 
 
 \section{5. Supuestos del proyecto}
