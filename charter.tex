@@ -228,104 +228,182 @@ El proyecto no contempla aspectos relacionados a la seguridad de la información
 	\item Requerimientos funcionales
 		\begin{enumerate}
 			\item Debe tener un sistema de control de posición en dos ejes (azimuth y altura).
+			
 			\item Debe poseer un Webserver embebido para monitoreo de variables ambientales y indicar su estado de operación (tracking, untracking, zenit, y calibrate). 
 			\item Debe implementarse lecturas de posicionamiento, lecturas de viento, temperatura y potencia consumida por el mismo. 
 			\item Debe conectarse a red local LAN, mediante cable ethernet RJ45. 
-			\item  Cortar el uso cuando el viento supere la velocidad máxima de operación mecánica de la antena, y volverla a su posición de equilibrio en el zenit.  
-			\item Debe tener un sistema de calibración a demanda por el operario de la antena 
-			\item Realizar de un software central con capacidad de manejar los periféricos del single board computer, y lectura de viento, tensión, corriente, y posición angular de la antena
-			\item Realizar un software que se pueda conectar con los programas Gpredict, Stelarium y el existente en el IAR para el manejo de las antenas principales. 
+			
+			\item Debe detener su funcionamiento cuando el viento sea superior a 50 km/h durante al menos 10 minutos y volver a su posición de equilibrio mecánico(cenit) 
+			\item Debe tener un sistema de calibración a demanda por el operario de la antena. 
+			\item Realizar de un software central con capacidad de manejar los periféricos del single board computer, y lectura de viento, tensión, corriente, y posición angular de la antena.
+			\item El software se debe conectar con los programas Gpredict, Stelarium y el existente en el IAR para el manejo de las antenas principales. 
+			\item EL software debe manejar los periféricos del single board computer. 
+			\item EL software debe permitir la lectura de viento, tensión, corriente y posición angular de la antena en ambos ejes. 
+			\item El software realizará un reporte diario a las 5AM con todos los datos almacenados en formato csv.  
 			\item En caso de adicionar otro programa distinto(Gpredict, stellarium o ya existente en el IAR) se debe actualizar el software del sistema posicionador. 
-			\item Solo puede realizar una operación de seguimiento. En caso de estar realizando el seguimiento de algún satelite/radiofuente, se le debe informar de dicha operación, y el operario tendrá que esperar que se termine la operación actual  
+			\item Solo puede realizar una operación de seguimiento. En caso de estar realizando el seguimiento de algún satelite/radiofuente, se le debe informar de dicha operación, y el operario tendrá que esperar que se termine la operación actual.  
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
 			\item Debe seguir la numeración y formato de los documentos establecidos por el IAR. 
-			\item Documentación sobre protocolos de comunicación via ethernet y de los programas involucrados, y trama de mensajes 
-			\item Manual de operación de la antena para operarios 
-			\item Manual de operación para actualización de software 
+			\item Documentación sobre protocolos de comunicación via ethernet y de los programas involucrados y trama de mensajes.
+			\item Manual de operación de la antena para operarios. 
+			\item Manual de operación para actualización de software. 
 			\item Documentación de software y hardware. 
-			\item Manual de procedimientos de testing de software y hardware	
+			\item Manual de procedimientos de testing de software y hardware.	
+			\item Reporte de test de software y hardware. 
+			\item Descripción del sistema a la respuesta al escalón y función de transferencia
 	\end{enumerate}
 	\item Requerimientos de interfaces
 		\begin{enumerate}
-			\item Los encoders estarán alineados con los dos ejes principales de movimiento de la antena 
-			\item Deberá utilizarse una red electrica para conectar el posicionador
+			\item Los encoders estarán alineados con los dos ejes principales de movimiento de la antena. 
+			\item Deberá utilizarse una red electrica para conectar el posicionador.
 		\end{enumerate}
 	\item Requerimiento de testing
 		\begin{enumerate}
-			\item Medir señal de control de posición de los motores
-			\item Webserver embebido, testing de señales sobre la placa con osciloscopio
+			\item Medir señal de control de posición de los motores.
+			\item Webserver embebido, testing de señales sobre la placa con osciloscopio.
 			\item Realizar el seguimiento de una radiofuente, e intentar realizar más de una conexión simultanea. 
 			\item Ver la señal de control mínima a partir de la cual los motores son capaces de mover la antena. 
-			\item Realizar experiencia de rebote lunar con stellarium (esto ya se ha realizado con anterioridad con las antenas principales de la institución). El objetivo es corroborar la calibración del mismo y la comunicación con el software  
+			\item Realizar experiencia de rebote lunar con stellarium (esto ya se ha realizado con anterioridad con las antenas principales de la institución). El objetivo es corroborar la calibración del mismo y la comunicación con el software.  
 
 		\end{enumerate}
 \end{enumerate}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
+criterio -> quedan espaciados en 2 
+	    muy bajo  2
+		bajo      3
+		medio     5
+		alto      7
+		muy alto  9
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+estaria bueno tener un control total sobre la antena 
 
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
+Debería tener telemetría para ver como es el estado de los instrumentos receptores 
 
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
-\end{consigna}
+
+La antena deberia poseer calibración manual y automática 
+
+
+
+
+
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
 
-Los entregables del proyecto son (ejemplo):
+
+Los entregables princiapales del proyecto son:
 
 \begin{itemize}
-	\item Manual de uso
-	\item Diagrama de circuitos esquemáticos
-	\item Código fuente del firmware
-	\item Diagrama de instalación
-	\item Informe final
-	\item etc...
+	\item Manual de uso. 
+	\item Diagrama de circuitos esquemáticos si los hubiera. 
+	\item Código fuente del firmware. 
+	\item Manual de actualización del firmware.  
+	\item Manual de procedimientos de testing de software y hardware.
+	\item Manual de operación de la antena. 
+	\item Descripción del sistema a la respuesta al escalón y función de transferencia(descripción breve con resultados relevantes).
+	\item Informe final.
 \end{itemize}
 
-\end{consigna}
+
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
-
 \begin{enumerate}
-\item Grupo de tareas 1
+\item Investigación preliminar (59 hs): 
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Búsqueda bibliográfica sobre sistemas de coordenadas y control digital(5 hs). 
+	\item Investigación de sistemas de coordenadas astronómicas y su transformación matemática(10 hs). 
+	\item Selección del microcontrolador/single board computer y generación tabla comparativa(10 hs).  
+	\item Instalación de herramientas de desarrollo y documentación (8 hs).
+	\item Estudio del manejo de periféricos de la placa seleccionada (15 hs).
+	\item Análisis del hardware disponible en mercado local e internacional(8 hs).
+	\item Primer informe de avance(3 hs).  
 	\end{enumerate}
-\item Grupo de tareas 2
+\item Diagramas de software(34 hs): 
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+		\item Diagrama de software para módulos de lectura de sensores (3 hs).  
+		\item Diagrama de software para el control de posición (5 hs). 
+		\item Diagrama de software para integración de lectura de sensores y control de posición (8hs) . 
+		\item Creación de interfaz de usuario para el webserver embebido (4 hs).
+		\item Creación de interfaz de usuario para el posicionamiento manual (4 hs).
+		\item Diagrama de integración de los módulos de software (5 hs). 
+		\item Generación parcial de documentación de software y hardware (5 hs) 
 	\end{enumerate}
-\item Grupo de tareas 3
+\item Desarrollo de software para lectura de sensores (53 hs) :
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\item Tarea 4 (tantas hs)
-	\item Tarea 5 (tantas hs)
+	\item Modulo de lectura del anemómetro(15 hs). 
+	\item Modulo de lectura de la tensión y corriente(10 hs). 
+	\item Módulo de lectura de encoders(10 hs). 
+	\item Módulo de armado de archivo csv y envió cada 24 hs de la telemetría (8hs).
+	\item Testing de software y generación de informe parcial (8 hs). 
+	\item Informe de avance(2hs). 		
 	\end{enumerate}
+\item Desarrollo del control de posición (105 HS) :  
+	\begin{enumerate}
+	\item  Desarrollo de herramientas de software/hardware para generar escalones de tensión y medir posición(30 hs). 
+	\item  Generación de informe de respuesta al escalón(25 hs). 
+	\item  Desarrollo del software de control digital (30 hs).  
+	\item  Testing del control mediante simulación manual del encoder o sobre la antena(dependiendo de si se ha construido o no la antena)(10hs)   
+	\item  Reporte de resultados del testing (10 hs). 	
 \end{enumerate}
+\item Desarrollo del webserver (200 hs):  
+	\begin{enumerate}
+		\item Instalación del servidor web(30 hs).
+		\item Creación del sistema de consulta de estado(25 hs). 
+		\item Creación de sistema de consulta de estado(25 hs). 
+		\item Programación del webserver con la interfaz(25 hs). 
+		\item Integración de interfaz con el control de posición y lectura de sensores(35 hs). 
+		\item Creación de API de consulta(30 hs). 
+		\item Generación de informe parcial de manual de operación de antena mediante webserver(20 hs). 
+		\item Generación parcial de documentación de software y hardware (10 hs).  
+	\end{enumerate}
+\item Desarrollo de conexión con Gpredict, stellarium y scripts del IAR(58 hs ) 
+	\begin{enumerate}
+		\item Modulo de software para conexión con Gpredict(8 hs)
+		\item Módulo de software para conexión con Stellarium(20 hs) 
+		\item Módulo de software desarrollado en el IAR compatible con las antenas principales(25 hs). 
+		\item Generación de documentación sobre protocolos de comunicación via ethernet y trama de mensajes(5 hs). 
+	\end{enumerate}
+\item Módulo de actualización de software(70 hs) 
+	\begin{enumerate}
+		\item Desarrollo de módulo de actualización de software (30 hs). 
+		\item testing de actualización de software (20 hs) . 
+		\item Manual de actualización de software (10 hs).
+		\item Generación de documento sobre el software y hardware (10 hs).
+		  
+	\end{enumerate}	
+\item Integración de los sistemas y ensamblado (169 hs): 
+	\begin{enumerate}
+	\item Ordenamiento de sistemas de información(3 hs). 
+	\item Integración de los módulos de software(39 hs)
+	\item Construcción de plan de pruebas(3 hs). 
+	\item Desarrollo del plan de pruebas (24 hs). 
+	\item Generación de reporte del plan de pruebas y resultados(10 hs).  
+	\item Desarrollo de shield o escudo para la placa seleccionada (15 hs). 
+	\item Testing con operadores de antena del IAR (40 hs). 
+	\item Reporte de resultados de operadores de antena del IAR y posibles mejoras (30 hs).
+	\item Montaje final en lugar de operación (5 hs).
+	\end{enumerate}	
+\item Generación de documentación (95 hs)
+	
+	\begin{enumerate}
+	\item Completar la documentación de software y hardware (30 hs).
+	\item Memoria técnica y construcción de diapositivas para presentación(40 hs). 
+	\item Reportes de resultados de observaciones y adjuntarlas como anexo al documento final(25 hs). 
+	\end{enumerate}
+	
 
-Cantidad total de horas: (tantas hs)
+\end{enumerate}
+	
+Cantidad total de horas :  843 hs  
 
-Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
 
-\end{consigna}
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
