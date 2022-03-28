@@ -68,8 +68,17 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
+
+1      & Corrección de las secciones 1 a 6 \newline 
+	     Se completa hasta el punto 9 sin las historias de usuario                 & 22 de marzo del 2022 \\ \hline
+
+
 %2      & Se completa hasta el punto 7 inclusive
+% segundo cambio 
+%---------------------------
+% Modificacion de los requerimientos, req, se modifico 1.10 y se elimino 1.7 de la versiòn anterior 
+% Diagrama AoN, 
+%
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
@@ -229,18 +238,18 @@ El proyecto no contempla aspectos relacionados a la seguridad de la información
 		\begin{enumerate}
 			\item Debe tener un sistema de control de posición en dos ejes (azimuth y altura).
 			
-			\item Debe poseer un Webserver embebido para monitoreo de variables ambientales y indicar su estado de operación (tracking, untracking, zenit, y calibrate). 
+			\item Debe poseer un Webserver embebido para monitoreo de variables ambientales e indicar su estado de operación (tracking, untracking, zenit, y calibrate). 
 			\item Debe implementarse lecturas de posicionamiento, lecturas de viento, temperatura y potencia consumida por el mismo. 
 			\item Debe conectarse a red local LAN, mediante cable ethernet RJ45. 
 			
-			\item Debe detener su funcionamiento cuando el viento sea superior a 50 km/h durante al menos 10 minutos y volver a su posición de equilibrio mecánico(cenit) 
+			\item Debe detener su funcionamiento cuando el viento sea superior a 50 km/h durante al menos 10 minutos y volver a su posición de equilibrio mecánico (cenit) 
 			\item Debe tener un sistema de calibración a demanda por el operario de la antena. 
-			\item Realizar de un software central con capacidad de manejar los periféricos del single board computer, y lectura de viento, tensión, corriente, y posición angular de la antena.
+%			\item Realizar de un software central con capacidad de manejar los periféricos del single board computer, y lectura de viento, tensión, corriente, y posición angular de la antena.
 			\item El software se debe conectar con los programas Gpredict, Stelarium y el existente en el IAR para el manejo de las antenas principales. 
-			\item EL software debe manejar los periféricos del single board computer. 
-			\item EL software debe permitir la lectura de viento, tensión, corriente y posición angular de la antena en ambos ejes. 
-			\item El software realizará un reporte diario a las 5AM con todos los datos almacenados en formato csv.  
-			\item En caso de adicionar otro programa distinto(Gpredict, stellarium o ya existente en el IAR) se debe actualizar el software del sistema posicionador. 
+			\item El software debe manejar los periféricos del single board computer. 
+			\item El software debe permitir la lectura de viento, tensión (velocidad en km/h), corriente en Ampere y posición angular (en grados) de la antena en ambos ejes. 
+			\item El software realizará un reporte diario a las 5 AM con todos los datos almacenados en formato csv.  
+			\item En caso de adicionar otro programa distinto (Gpredict, stellarium o ya existente en el IAR) se debe actualizar el software del sistema posicionador. 
 			\item Solo puede realizar una operación de seguimiento. En caso de estar realizando el seguimiento de algún satelite/radiofuente, se le debe informar de dicha operación, y el operario tendrá que esperar que se termine la operación actual.  
 		\end{enumerate}
 	\item Requerimientos de documentación
@@ -272,22 +281,44 @@ El proyecto no contempla aspectos relacionados a la seguridad de la información
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
-criterio -> quedan espaciados en 2 
-	    muy bajo  2
-		bajo      3
-		medio     5
-		alto      7
-		muy alto  9
 
-estaria bueno tener un control total sobre la antena 
+%estaria bueno tener un control total sobre la antena 
+%
+%Debería tener telemetría para ver como es el estado de los instrumentos receptores 
+%
+%
+%La antena deberia poseer calibración manual y automática 
+% Deberia poder moverse en forma gráfica 
+El criterio que se utiliza para evaluar la complejidad de las  historias de usuarios (Story point) es el que sigue:
+\begin{itemize}
+	\item Muy bajo: 1 punto 
+	\item Bajo: 2 puntos
+	\item Medio: 3 puntos 
+	\item Alto: 4 puntos 
+	\item Muy alto: 5 puntos
+\end{itemize}
 
-Debería tener telemetría para ver como es el estado de los instrumentos receptores 
+U\begin{itemize}
+	\item Debería tener telemetría para visualizar el estado de los instrumentos receptores
+		\begin{itemize}
+			\item Medio: 4 puntos
+		\end{itemize}
 
+	\item Debería poder moverse en forma gráfica 
+		\begin{itemize}
+			\item Alto: 4 puntos
+		\end{itemize}
+	
+	\item Mientras mayor control se tenga sobre la antena, mejor. 
+		\begin{itemize}
+			\item Muy alto: 5 puntos
+		\end{itemize}
+		
 
-La antena deberia poseer calibración manual y automática 
+\end{itemize}
 
-
-
+%Considerando la suma de las tres puntuaciones, se puede decir que hay 13 puntos de dificultad 
+% 
 
 
 
@@ -305,7 +336,7 @@ Los entregables princiapales del proyecto son:
 	\item Manual de actualización del firmware.  
 	\item Manual de procedimientos de testing de software y hardware.
 	\item Manual de operación de la antena. 
-	\item Descripción del sistema a la respuesta al escalón y función de transferencia(descripción breve con resultados relevantes).
+	\item Descripción del sistema a la respuesta al escalón y función de transferencia (descripción breve con resultados relevantes).
 	\item Informe final.
 \end{itemize}
 
@@ -317,19 +348,19 @@ Los entregables princiapales del proyecto son:
 \begin{enumerate}
 \item Investigación preliminar (59 hs): 
 	\begin{enumerate}
-	\item Búsqueda bibliográfica sobre sistemas de coordenadas y control digital(5 hs). 
-	\item Investigación de sistemas de coordenadas astronómicas y su transformación matemática(10 hs). 
-	\item Selección del microcontrolador/single board computer y generación tabla comparativa(10 hs).  
+	\item Búsqueda bibliográfica sobre sistemas de coordenadas y control digital (5 hs). 
+	\item Investigación de sistemas de coordenadas astronómicas y su transformación matemática (10 hs). 
+	\item Selección del microcontrolador/single board computer y generación tabla comparativa (10 hs).  
 	\item Instalación de herramientas de desarrollo y documentación (8 hs).
 	\item Estudio del manejo de periféricos de la placa seleccionada (15 hs).
-	\item Análisis del hardware disponible en mercado local e internacional(8 hs).
-	\item Primer informe de avance(3 hs).  
+	\item Análisis del hardware disponible en mercado local e internacional (8 hs).
+	\item Primer informe de avance (3 hs).  
 	\end{enumerate}
-\item Diagramas de software(34 hs): 
+\item Diagramas de software (34 hs): 
 	\begin{enumerate}
 		\item Diagrama de software para módulos de lectura de sensores (3 hs).  
 		\item Diagrama de software para el control de posición (5 hs). 
-		\item Diagrama de software para integración de lectura de sensores y control de posición (8hs) . 
+		\item Diagrama de software para integración de lectura de sensores y control de posición (8 hs) . 
 		\item Creación de interfaz de usuario para el webserver embebido (4 hs).
 		\item Creación de interfaz de usuario para el posicionamiento manual (4 hs).
 		\item Diagrama de integración de los módulos de software (5 hs). 
@@ -337,8 +368,8 @@ Los entregables princiapales del proyecto son:
 	\end{enumerate}
 \item Desarrollo de software para lectura de sensores (53 hs) :
 	\begin{enumerate}
-	\item Modulo de lectura del anemómetro(15 hs). 
-	\item Modulo de lectura de la tensión y corriente(10 hs). 
+	\item Modulo de lectura del anemómetro (15 hs). 
+	\item Modulo de lectura de la tensión y corriente (10 hs). 
 	\item Módulo de lectura de encoders(10 hs). 
 	\item Módulo de armado de archivo csv y envió cada 24 hs de la telemetría (8hs).
 	\item Testing de software y generación de informe parcial (8 hs). 
@@ -356,24 +387,24 @@ Los entregables princiapales del proyecto son:
 	\begin{enumerate}
 		\item Instalación del servidor web(30 hs).
 		\item Creación del sistema de consulta de estado(25 hs). 
-		\item Creación de sistema de consulta de estado(25 hs). 
+	
 		\item Programación del webserver con la interfaz(25 hs). 
 		\item Integración de interfaz con el control de posición y lectura de sensores(35 hs). 
 		\item Creación de API de consulta(30 hs). 
 		\item Generación de informe parcial de manual de operación de antena mediante webserver(20 hs). 
 		\item Generación parcial de documentación de software y hardware (10 hs).  
 	\end{enumerate}
-\item Desarrollo de conexión con Gpredict, stellarium y scripts del IAR(58 hs ) 
+\item Desarrollo de conexión con Gpredict, stellarium y scripts del IAR (58 hs) 
 	\begin{enumerate}
-		\item Modulo de software para conexión con Gpredict(8 hs)
-		\item Módulo de software para conexión con Stellarium(20 hs) 
-		\item Módulo de software desarrollado en el IAR compatible con las antenas principales(25 hs). 
-		\item Generación de documentación sobre protocolos de comunicación via ethernet y trama de mensajes(5 hs). 
+		\item Modulo de software para conexión con Gpredict (8 hs)
+		\item Módulo de software para conexión con Stellarium (20 hs) 
+		\item Módulo de software desarrollado en el IAR compatible con las antenas principales (25 hs). 
+		\item Generación de documentación sobre protocolos de comunicación via ethernet y trama de mensajes (5 hs). 
 	\end{enumerate}
 \item Módulo de actualización de software(70 hs) 
 	\begin{enumerate}
 		\item Desarrollo de módulo de actualización de software (30 hs). 
-		\item testing de actualización de software (20 hs) . 
+		\item Testing de actualización de software (20 hs) . 
 		\item Manual de actualización de software (10 hs).
 		\item Generación de documento sobre el software y hardware (10 hs).
 		  
@@ -408,82 +439,23 @@ Cantidad total de horas :  843 hs
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior. 
-
-%La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
-
-%\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
-
-\end{consigna}
-
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
-\caption{Diagrama en \textit{Activity on Node}}
+Este es un diagrama de AoN para el curso de GdP
+\begin{figure}[p]
+\centering
+\includegraphics[width = \textwidth]{./Figuras/AonGantt/ActivityOnNode.jpg}
+\caption{Diagrama de \textit{Activity on Node}}
 \label{fig:AoN}
 \end{figure}
 
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
+
 
 
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-\begin{consigna}{red}
-
-Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre los cuales destacamos:
-
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{ganttchart}{1}{12}
-  \gantttitle{2020}{12} \\
-  \gantttitlelist{1,...,12}{1} \\
-  \ganttgroup{Group 1}{1}{7} \\
-  \ganttbar{Task 1}{1}{2} \\
-  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-  \ganttbar{Final Task}{8}{12}
-  \ganttlink{elem2}{elem3}
-  \ganttlink{elem3}{elem4}
-\end{ganttchart}
-\end{center}
-\caption{Diagrama de gantt de ejemplo}
-\label{fig:gantt}
-\end{figure}
 
 
-\begin{landscape}
-\begin{figure}[htpb]
-\centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt rotado}
-\label{fig:diagGantt}
-\end{figure}
-
-\end{landscape}
-
-\end{consigna}
 
 
 \section{12. Presupuesto detallado del proyecto}
