@@ -120,8 +120,7 @@ Se adjunta a esta acta la planificación inicial.
 
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
-
-En este trabajo se realiza un sistema de posicionamiento y telemetría para una antena parabólica de 5 m de diámetro la cual forma parte de un interferometro. Este proyecto es un subsistema del proyecto principal, denominado Interferometro MIA (Multipurpose Interferometric Array) y Estación Terrena, dentro de la institución. La antena perteneciente a la estación terrena es idéntica a la del interferometro. 
+El presente proyecto, se realiza en el Instituto Argentino de Radioastronomía. El mismo se dedica a la observación del espacio mediante ondas de radio, esta técnica de observación se denomina radiastronomía. En este trabajo se realiza un sistema de posicionamiento y telemetría para una antena parabólica de 5 m de diámetro la cual forma parte de un interferometro. Este proyecto es un subsistema del proyecto principal, denominado Interferometro MIA (Multipurpose Interferometric Array) y Estación Terrena, dentro de la institución. La antena perteneciente a la estación terrena es idéntica a la del interferometro. 
 %imagen de antena de interferómetro mia %
 \begin{figure}[H]
 	\centering 
@@ -154,7 +153,7 @@ Adicionalmente, al estar en un lugar remoto dentro del organismo, debe poseer te
 \begin{figure}[h!]
 	\vspace{-0.1cm}
 	\centering 
-	\includegraphics[height=12cm,width =\textwidth]{Figuras/seccion_1/interferometria.png}
+	\includegraphics[height=11cm,width =\textwidth]{Figuras/seccion_1/interferometria.png}
 	\caption{Diagrama en bloques del sistema }
 	\label{fig:bloques_sistema}
 \end{figure} 
@@ -244,10 +243,9 @@ El proyecto no contempla aspectos relacionados a la seguridad de la información
 			
 			\item Debe detener su funcionamiento cuando el viento sea superior a 50 km/h durante al menos 10 minutos y volver a su posición de equilibrio mecánico (cenit) 
 			\item Debe tener un sistema de calibración a demanda por el operario de la antena. 
-%			\item Realizar de un software central con capacidad de manejar los periféricos del single board computer, y lectura de viento, tensión, corriente, y posición angular de la antena.
 			\item El software se debe conectar con los programas Gpredict, Stelarium y el existente en el IAR para el manejo de las antenas principales. 
 			\item El software debe manejar los periféricos del single board computer. 
-			\item El software debe permitir la lectura de viento, tensión (velocidad en km/h), corriente en Ampere y posición angular (en grados) de la antena en ambos ejes. 
+			\item El software debe permitir la lectura de viento (velocidad en km/h), tensión , corriente en Ampere y posición angular (en grados) de la antena en ambos ejes. 
 			\item El software realizará un reporte diario a las 5 AM con todos los datos almacenados en formato csv.  
 			\item En caso de adicionar otro programa distinto (Gpredict, stellarium o ya existente en el IAR) se debe actualizar el software del sistema posicionador. 
 			\item Solo puede realizar una operación de seguimiento. En caso de estar realizando el seguimiento de algún satelite/radiofuente, se le debe informar de dicha operación, y el operario tendrá que esperar que se termine la operación actual.  
@@ -298,7 +296,7 @@ El criterio que se utiliza para evaluar la complejidad de las  historias de usua
 	\item Muy alto: 5 puntos
 \end{itemize}
 
-U\begin{itemize}
+\begin{itemize}
 	\item Debería tener telemetría para visualizar el estado de los instrumentos receptores
 		\begin{itemize}
 			\item Medio: 4 puntos
@@ -447,13 +445,12 @@ Este es un diagrama de AoN para el curso de GdP
 \label{fig:AoN}
 \end{figure}
 
-
-
-
-
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
-
+Este es el diagrama de gannt 
+\begin{figure}[H]
+	\includegraphics[width = \textwidth, height = 15cm,trim={0 3cm 0  0.1cm},clip ]{./Figuras/AonGantt/gannt_poss.pdf}
+\end{figure}
 
 
 
@@ -532,28 +529,53 @@ Descripción &
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
- 
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+Riesgo 1: El sistema mecánico de movimiento de la antena no esté listo antes de la tarea 4.
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
-\end{itemize}   
-
-Riesgo 2:
-\begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad(S) 8\newline
+		La severidad es alta dado que el objetivo principal del trabajo es realizar el control sobre ella.
+	\item Probabilidad de ocurrencia (O) 3 \newline
+		Esta probabilidad se asigna, ya que se han comprado todos los materiales estructurales para su construcción. Cabe destacar que su construcción 
+		esta a cargo del departamento de mecánica. 
 \end{itemize}
 
-Riesgo 3:
+Riesgo 2: El proyecto deje de estar entre los objetivos estratégicos de la institución.
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad(S) 8\newline
+	La severidad es alta dado que el proyecto no se terminaría en tiempo y forma pactada. Además, se asignarian los recursos del presente proyecto a otro. 
+	\item Probabilidad de ocurrencia (O) 3 \newline
+	Esta probabilidad se asigna dado que una de las funciones principales es la observación del espacio mediante ondas de radio.  
 \end{itemize}
+
+
+Riesgo 3: Realizar mal la estimación de duración de las tareas. 
+\begin{itemize}
+	\item Severidad(S) 7\newline 
+	Se asigna esta puntuación debido a que se demora el prototipo funcional para solicitar nuevas fuentes de financiamiento y colaboraciónes 
+	de radiotelescopios internacionales.  
+	\item Probabilidad de ocurrencia (O) 7\newline 
+	Alta, debido a que hay tareas a las cuales no se han en la experiencia del profesional que la realiza.  
+\end{itemize}
+
+
+Riesgo 4: No conseguir los componentes para realizar el rebote lunar. 
+\begin{itemize}
+	\item Severidad(S) 4\newline 
+		Si bien es deseable que se realice no afecta al funcionamiento del proyecto ni su objetivo principal. 
+	\item Probabilidad de ocurrencia (O) 4\newline 
+		La probabilidad es baja, porque existen los componentes y el personal calificado para llevarlo a cabo. 
+\end{itemize}
+
+Riesgo 5: Algunos de los componentes no se encuentren en el mercado local. 
+\begin{itemize}
+	\item Severidad(S) 4\newline 
+		Si los componentes deben importarse, implica un retraso importante en el proyecto dado que se podrá trabajar con placas ya existentes en el laboratorio. 
+
+	\item Probabilidad de ocurrencia (O) \newline 
+	   Se plantea que la mayor parte de los componentes se encuentren en el mercado local. En caso contrario, se verá la forma de mitigar este efecto, dado que al ser una institución del estado nacional, las compras en el extranjero se fijan por ROECYT, y tiene una duración estimada de 6 meses aproximadamente. 
+\end{itemize}
+
+
+
 
 
 b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
@@ -563,54 +585,117 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+Riesgo & S  & O  & RPN & S*  & O*   & RPN* \\ \hline
+   1   & 8  & 3  &  24 & 5   & 2    & 10     \\ \hline
+   2   & 8  & 3  &  24 & 2   & 2    &  4    \\ \hline
+   3   & 7  & 7  &  49 & 7   & 7   &  14   \\ \hline
+   4   & 4  & 4  &  16 &    &    &      \\ \hline
+   5   & 4  & 4  &  28 &    &    &      \\ \hline
+   
 \end{tabularx}%
 \end{table}
 
-Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 22 
+
+
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+Riesgo 1: En caso que la estructura mecánica de la antena, no se encuentre construida, hay dos antenas a escala para realizar el control. 
+\begin{enumerate}
+	\item Severidad (S) 5 \newline
+	Si bien el control no es el mismo se puede obtener el conocimiento sobre la forma de caracterizar sistemas de este tipo, para luego aplicarlo sobre las antenas originales del interferómetro MIA.   
+	\item Probabilidad de ocurrencia (2)\newline 
+	Dado que los materiales para su construcción están comprados, no debería llegar a ocurrir 
+	
+\end{enumerate} 
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 2: Se mostrarán las bondades del sistema de apuntamiento para volverlo a ubicar entre los objetivos estratégicos. 
+\begin{itemize}
+	\item Severidad (S) 2: \newline
+	La institución entre sus objetivos principales es realizar mejoras sobre las antenas y su electrónica en forma continua 
+	\item Probabilida de ocurrencia (O) 2: 
+	Es díficil que ocurra porque existen proyectos de colaboración internacional. 
+\end{itemize}
 
-\end{consigna}
+
+
+
+
+Riesgo 3: Se adicionaran horas hombre y se pedirá colaboración a los interesados.
+\begin{itemize}
+	\item Severidad (S) 7: \newline 
+	Deberán sumar personal en caso de subestimación, y en caso de sobreestimación, no se corre ningún tipo de riesgo  
+	\item Probabilidad de ocurrencia (O): 7  \newline
+	Debido al desconocimiento del estado del arte de algunas tareas por parte del diseñador del proyecto.  
+\end{itemize}
+Riesgo 4: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+
+
 
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Para cada uno de los requerimientos del proyecto indique:
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
+\begin{enumerate}
+\item Requerimientos funcionales 
+	\begin{enumerate}
+		\item Debe tener un sistema de control de posición en dos ejes (azimuth y altura).
+				\begin{itemize}
+					\item Verificación: Se comprobará el sistema de control responda ante una referencia de posición y colocando un receptor de banda L en la antena. 
+					\item Validación: Se entregará documentación sobre el sistema y modelado matemático del mismo. 
+				\end{itemize} 
+		
+		\item Debe poseer un Webserver embebido para monitoreo de variables ambientales e indicar su estado de operación (tracking, untracking, zenit, y calibrate). 
+			\begin{itemize}
+				\item Verificación:Se ingresará al webserver y se realiza un cambio de estado desde otra estación de trabajo. 
+				\item Validación: Se comprueba que el web server embebido no realice conexiónes con otras estaciones. Se entrega documentación sobre la operación a bajo nivel del mismo.  
+			\end{itemize} 
+%1.3		\item Debe implementarse lecturas de posicionamiento, lecturas de viento, temperatura y potencia consumida por el mismo. 
+%1.4		\item Debe conectarse a red local LAN, mediante cable ethernet RJ45. 
+		\setcounter{enumii}{4}	
+%1.5 
+		\item Debe detener su funcionamiento cuando el viento sea superior a 50 km/h durante al menos 10 minutos y volver a su posición de equilibrio mecánico (cenit) 
+			\begin{itemize}
+				\item Verificación: Se girá el anemómetro mediante acople a un motor de corriente continua durante 10 minutos. Luego se procede a intentar movilizar la antena. Se realiza una segunda prueba, pero ubicando la antena en una posición distinta del cenit. 
+				\item Validación: Se comprueba que la antena realice las maniobras correspondientes para regresar al cenit. 
+			\end{itemize} 
+		\item Debe tener un sistema de calibración a demanda por el operario de la antena. 
+			\begin{itemize}
+				\item Verificación: Se entrega una manual de operación de la antena para operarios.  
+				\item Validación: Se comprueba que los operarios entiendan el manual de operación, se despejan dudas al respecto.   
+			\end{itemize} 
+		\item El software se debe conectar con los programas Gpredict, Stelarium y el existente en el IAR para el manejo de las antenas principales. 
+			\begin{itemize}
+				\item Verificación: Se conecta con Gpredict y Stellarium, y se verifica un seguimiento completo.  
+				\item Validación: Se crea un manual de uso para los operarios de estos programas y se verifica que puedan realizar el seguimiento.   
+			\end{itemize} 
+		
+%1 - 8 		\item El software debe manejar los periféricos del single board computer. 
+% 1.9		\item El software debe permitir la lectura de viento (velocidad en km/h), tensión , corriente en Ampere y posición angular (en grados) de la antena en ambos ejes. 
+% 1.10 		\item El software realizará un reporte diario a las 5 AM con todos los datos almacenados en formato csv.  
+% 1. 11		\item En caso de adicionar otro programa distinto (Gpredict, stellarium o ya existente en el IAR) se debe actualizar el software del sistema posicionador. 
+		\setcounter{enumii}{10}	
+		\item Solo puede realizar una operación de seguimiento. En caso de estar realizando el seguimiento de algún satelite/radiofuente, se le debe informar de dicha operación, y el operario tendrá que esperar que se termine la operación actual.  
+			\begin{itemize}
+				\item Verificación: Se procede a realizar una operación de seguimiento desde una estación de trabajo, mientras se encuentra en estado de tracking.   
+				\item Validación: Se comprueba el rechazo e informe al operador de la segunda PC en cuestión al intentar conectarse y mover la antena.   
+			\end{itemize} 
+	\end{enumerate}
 
+\item Requerimientos de documentación 
 \begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
-\end{itemize}
+
+	\item Verificación: Se completan todos los entregables del proyecto sujeto a correcciones por parte de miembros de la organización.  
+	\item Validación: Se procede con el alta de documentación en el sistema SIGEVA del CONICET. 
 
 \end{itemize}
+\end{enumerate}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
 
-\end{consigna}
+
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
