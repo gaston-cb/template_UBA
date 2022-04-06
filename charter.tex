@@ -71,7 +71,13 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 
 1      & Corrección de las secciones 1 a 6 \newline 
 	     Se completa hasta el punto 9 sin las historias de usuario                 & 22 de marzo del 2022 \\ \hline
-
+2 	   & Se agregaron historias de usuarios \newline 
+		 Diagrama de Gannt y Activiy on Node \newline 
+		 Gestión de riesgos y gestión de la calidad \newline 
+		 Se cambia la redacción de los requerimientos 1.12 y 4.5 \newline & 29 de marzo del 2022 \\ \hline 
+		
+		
+		
 
 %2      & Se completa hasta el punto 7 inclusive
 % segundo cambio 
@@ -120,7 +126,7 @@ Se adjunta a esta acta la planificación inicial.
 
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
-El presente proyecto, se realiza en el Instituto Argentino de Radioastronomía. El mismo se dedica a la observación del espacio mediante ondas de radio, esta técnica de observación se denomina radiastronomía. En este trabajo se realiza un sistema de posicionamiento y telemetría para una antena parabólica de 5 m de diámetro la cual forma parte de un interferometro. Este proyecto es un subsistema del proyecto principal, denominado Interferometro MIA (Multipurpose Interferometric Array) y Estación Terrena, dentro de la institución. La antena perteneciente a la estación terrena es idéntica a la del interferometro. 
+El presente proyecto, se realiza en el Instituto Argentino de Radioastronomía. El mismo se dedica a observar del espacio mediante ondas de radio, esta técnica de observación se denomina radiastronomía. En este trabajo se realiza un sistema de posicionamiento y telemetría para una antena parabólica de 5 m de diámetro la cual forma parte de un interferometro. Este proyecto es un subsistema del proyecto principal, denominado Interferometro MIA (Multipurpose Interferometric Array) y Estación Terrena, dentro de la institución. La antena perteneciente a la estación terrena es idéntica a la del interferometro. 
 %imagen de antena de interferómetro mia %
 \begin{figure}[H]
 	\centering 
@@ -190,7 +196,7 @@ Adicionalmente, al estar en un lugar remoto dentro del organismo, debe poseer te
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
-	El propósito de este proyecto es realizar un sistema de apuntamiento para una antena (ver figura \ref{fig:antena_mia}). Esta antena, debe ponerse en el cenit en caso de no realizar ningún tipo de seguimiento, ya que este punto es el de equilibrio mecánico. Una vez finalizado este desarrollo, se lo replicará en otras tres antenas de iguales características. 
+	El propósito de este proyecto es realizar un sistema de apuntamiento para una antena (ver figura \ref{fig:antena_mia}). Esta antena debe ponerse en el cenit en caso de no realizar ningún tipo de seguimiento, ya que este punto es el de equilibrio mecánico. Una vez finalizado este desarrollo, se lo replicará en otras tres antenas de iguales características. 
 
 
 \section{4. Alcance del proyecto}
@@ -247,7 +253,7 @@ El proyecto no contempla aspectos relacionados a la seguridad de la información
 			\item El software debe manejar los periféricos del single board computer. 
 			\item El software debe permitir la lectura de viento (velocidad en km/h), tensión , corriente en Ampere y posición angular (en grados) de la antena en ambos ejes. 
 			\item El software realizará un reporte diario a las 5 AM con todos los datos almacenados en formato csv.  
-			\item En caso de adicionar otro programa distinto (Gpredict, stellarium o ya existente en el IAR) se debe actualizar el software del sistema posicionador. 
+			\item En caso de adicionar otro programa distinto al Gpredict, Stellarium o los scripts existentes en el IAR, se debe actualizar el software del sistema posicionador. 
 			\item Solo puede realizar una operación de seguimiento. En caso de estar realizando el seguimiento de algún satelite/radiofuente, se le debe informar de dicha operación, y el operario tendrá que esperar que se termine la operación actual.  
 		\end{enumerate}
 	\item Requerimientos de documentación
@@ -272,7 +278,7 @@ El proyecto no contempla aspectos relacionados a la seguridad de la información
 			\item Webserver embebido, testing de señales sobre la placa con osciloscopio.
 			\item Realizar el seguimiento de una radiofuente, e intentar realizar más de una conexión simultanea. 
 			\item Ver la señal de control mínima a partir de la cual los motores son capaces de mover la antena. 
-			\item Realizar experiencia de rebote lunar con stellarium (esto ya se ha realizado con anterioridad con las antenas principales de la institución). El objetivo es corroborar la calibración del mismo y la comunicación con el software.  
+			\item Podría realizase una experiencia de rebote lunar con Stellarium (esto ya se ha realizado con anterioridad con las antenas principales de la institución). El objetivo es corroborar la calibración del mismo y la comunicación con el software.  
 
 		\end{enumerate}
 \end{enumerate}
@@ -287,29 +293,29 @@ El proyecto no contempla aspectos relacionados a la seguridad de la información
 %
 %La antena deberia poseer calibración manual y automática 
 % Deberia poder moverse en forma gráfica 
-El criterio que se utiliza para evaluar la complejidad de las  historias de usuarios (Story point) es el que sigue:
+El criterio que se utiliza para evaluar la complejidad de las  historias de usuarios (Story point) es:
 \begin{itemize}
-	\item Muy bajo: 1 punto 
-	\item Bajo: 2 puntos
-	\item Medio: 3 puntos 
-	\item Alto: 4 puntos 
-	\item Muy alto: 5 puntos
+	\item Muy bajo: 1 puntos. 
+	\item Bajo: 2 puntos.
+	\item Medio: 3 puntos. 
+	\item Alto: 4 puntos. 
+	\item Muy alto: 5 puntos.
 \end{itemize}
 
 \begin{itemize}
-	\item Debería tener telemetría para visualizar el estado de los instrumentos receptores
+	\item Debería tener telemetría para visualizar el estado de los instrumentos receptores.
 		\begin{itemize}
-			\item Medio: 4 puntos
+			\item Medio: 4 puntos.
 		\end{itemize}
 
-	\item Debería poder moverse en forma gráfica 
+	\item Debería poder moverse en forma gráfica. 
 		\begin{itemize}
-			\item Alto: 4 puntos
+			\item Alto: 4 puntos.
 		\end{itemize}
 	
 	\item Mientras mayor control se tenga sobre la antena, mejor. 
 		\begin{itemize}
-			\item Muy alto: 5 puntos
+			\item Muy alto: 5 puntos.
 		\end{itemize}
 		
 
@@ -348,7 +354,7 @@ Los entregables princiapales del proyecto son:
 	\begin{enumerate}
 	\item Búsqueda bibliográfica sobre sistemas de coordenadas y control digital (5 hs). 
 	\item Investigación de sistemas de coordenadas astronómicas y su transformación matemática (10 hs). 
-	\item Selección del microcontrolador/single board computer y generación tabla comparativa (10 hs).  
+	\item Selección del microcontrolador/single board computer y generación de tabla comparativa (10 hs).  
 	\item Instalación de herramientas de desarrollo y documentación (8 hs).
 	\item Estudio del manejo de periféricos de la placa seleccionada (15 hs).
 	\item Análisis del hardware disponible en mercado local e internacional (8 hs).
@@ -362,7 +368,7 @@ Los entregables princiapales del proyecto son:
 		\item Creación de interfaz de usuario para el webserver embebido (4 hs).
 		\item Creación de interfaz de usuario para el posicionamiento manual (4 hs).
 		\item Diagrama de integración de los módulos de software (5 hs). 
-		\item Generación parcial de documentación de software y hardware (5 hs) 
+		\item Generación parcial de documentación de software y hardware (5 hs).
 	\end{enumerate}
 \item Desarrollo de software para lectura de sensores (53 hs) :
 	\begin{enumerate}
@@ -373,47 +379,46 @@ Los entregables princiapales del proyecto son:
 	\item Testing de software y generación de informe parcial (8 hs). 
 	\item Informe de avance(2hs). 		
 	\end{enumerate}
-\item Desarrollo del control de posición (105 HS) :  
+\item Desarrollo del control de posición (105 hs):  
 	\begin{enumerate}
-	\item  Desarrollo de herramientas de software/hardware para generar escalones de tensión y medir posición(30 hs). 
-	\item  Generación de informe de respuesta al escalón(25 hs). 
+	\item  Desarrollo de herramientas de software/hardware para generar escalones de tensión y medir posición (30 hs). 
+	\item  Generación de informe de respuesta al escalón (25 hs). 
 	\item  Desarrollo del software de control digital (30 hs).  
-	\item  Testing del control mediante simulación manual del encoder o sobre la antena(dependiendo de si se ha construido o no la antena)(10hs)   
+	\item  Testing del control mediante simulación manual del encoder o sobre la antena(dependiendo de si se ha construido o no la antena) (10hs).   
 	\item  Reporte de resultados del testing (10 hs). 	
 \end{enumerate}
 \item Desarrollo del webserver (200 hs):  
 	\begin{enumerate}
 		\item Instalación del servidor web(30 hs).
-		\item Creación del sistema de consulta de estado(25 hs). 
-	
-		\item Programación del webserver con la interfaz(25 hs). 
-		\item Integración de interfaz con el control de posición y lectura de sensores(35 hs). 
-		\item Creación de API de consulta(30 hs). 
-		\item Generación de informe parcial de manual de operación de antena mediante webserver(20 hs). 
+		\item Creación del sistema de consulta de estado (25 hs). 
+		\item Programación del webserver con la interfaz (25 hs). 
+		\item Integración de interfaz con el control de posición y lectura de sensores (35 hs). 
+		\item Creación de API de consulta (30 hs). 
+		\item Generación de informe parcial de manual de operación de antena mediante webserver (20 hs). 
 		\item Generación parcial de documentación de software y hardware (10 hs).  
 	\end{enumerate}
-\item Desarrollo de conexión con Gpredict, stellarium y scripts del IAR (58 hs) 
+\item Desarrollo de conexión con Gpredict, Stellarium y scripts del IAR (58 hs):
 	\begin{enumerate}
-		\item Modulo de software para conexión con Gpredict (8 hs)
-		\item Módulo de software para conexión con Stellarium (20 hs) 
+		\item Modulo de software para conexión con Gpredict (8 hs).
+		\item Módulo de software para conexión con Stellarium (20 hs). 
 		\item Módulo de software desarrollado en el IAR compatible con las antenas principales (25 hs). 
 		\item Generación de documentación sobre protocolos de comunicación via ethernet y trama de mensajes (5 hs). 
 	\end{enumerate}
-\item Módulo de actualización de software(70 hs) 
+\item Módulo de actualización de software (70 hs): 
 	\begin{enumerate}
 		\item Desarrollo de módulo de actualización de software (30 hs). 
 		\item Testing de actualización de software (20 hs) . 
 		\item Manual de actualización de software (10 hs).
-		\item Generación de documento sobre el software y hardware (10 hs).
+		\item Generación de la documentación sobre software y hardware (10 hs).
 		  
 	\end{enumerate}	
 \item Integración de los sistemas y ensamblado (169 hs): 
 	\begin{enumerate}
-	\item Ordenamiento de sistemas de información(3 hs). 
-	\item Integración de los módulos de software(39 hs)
-	\item Construcción de plan de pruebas(3 hs). 
+	\item Ordenamiento de sistemas de información (3 hs). 
+	\item Integración de los módulos de software (39 hs)
+	\item Construcción del plan de pruebas (3 hs). 
 	\item Desarrollo del plan de pruebas (24 hs). 
-	\item Generación de reporte del plan de pruebas y resultados(10 hs).  
+	\item Generación de reporte del plan de pruebas y resultados (10 hs).  
 	\item Desarrollo de shield o escudo para la placa seleccionada (15 hs). 
 	\item Testing con operadores de antena del IAR (40 hs). 
 	\item Reporte de resultados de operadores de antena del IAR y posibles mejoras (30 hs).
@@ -436,8 +441,14 @@ Cantidad total de horas :  843 hs
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
+El diagrama de Activity on node, se muestra en la figura \ref{fig:AoN}, y el código de colores utilizado en el diagrama se muestre a continuación: 
+\begin{figure}[H]
+	\includegraphics[width = \textwidth,height = 5.1cm]{./Figuras/AonGantt/cod_colores.jpg}
+	\caption{Código de colores utilizado en el diagrama de la figura \ref{fig:AoN}}
+\end{figure} 
 
-Este es un diagrama de AoN para el curso de GdP
+
+
 \begin{figure}[p]
 \centering
 \includegraphics[width = \textwidth]{./Figuras/AonGantt/ActivityOnNode.jpg}
@@ -447,9 +458,13 @@ Este es un diagrama de AoN para el curso de GdP
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
-Este es el diagrama de gannt 
+El diagrama de gannt se muestra en la figura \ref{fig:diaGANTT}, se planifica una estimación de 30 hs semanales. Están contemplado días festivos y feriados de la República Argentina. 
+
+
 \begin{figure}[H]
-	\includegraphics[width = \textwidth, height = 15cm,trim={0 3cm 0  0.1cm},clip ]{./Figuras/AonGantt/gannt_poss.pdf}
+	\includegraphics[width = \textwidth, height = 21.2cm,trim={0 3cm 0  0.1cm},clip ]{./Figuras/AonGantt/gannt_poss.pdf}
+	\caption{Diagrama de gannt estimado del proyecto}
+	\label{fig:diaGANTT}
 \end{figure}
 
 
@@ -457,72 +472,76 @@ Este es el diagrama de gannt
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
-
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-\end{consigna}
-
+El presupuesto es estimativo porque el desarrollo del producto no se ha iniciado. Los componenentes adquiridos a la fecha son los encoders absolutos, presentados en la tabla de presupuestos. 
+\def\tablename{Tabla}%
+%El resto del presupuesto aún no se ha definido de forma detallada dado que el desarrollo no se ha iniciado aún. 
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Descripción &
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
+	\rowcolor[HTML]{C0C0C0} 
+	Descripción &
+	  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
+	  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+	  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+   Single board computer&
+  \multicolumn{1}{c|}{2} &
+  \multicolumn{1}{c|}{20000} &
+  \multicolumn{1}{c|}{40000} \\ \hline
+ anemómetro o construcción del mismo &
+ \multicolumn{1}{c|}{1} &
+ \multicolumn{1}{c|}{30000} &
+ \multicolumn{1}{c|}{30000} \\ \hline
+ Encoders absolutos AMT20
+   & \multicolumn{1}{c|}{2}
+   & \multicolumn{1}{c|}{20000}
+   & \multicolumn{1}{c|}{50000}   \\ \hline
+   Diseño puente H   
+   & \multicolumn{1}{c|}{2}
+   & \multicolumn{1}{c|}{15000}
+   & \multicolumn{1}{c|}{30000}
+   \\ \hline
+   Sensores de tensión y corriente
+   & \multicolumn{1}{c|}{6}
+   & \multicolumn{1}{c|}{500}
+   & \multicolumn{1}{c|}{3000}
+   \\ \hline
+   \multicolumn{3}{|c|}{SUBTOTAL} &
+   \multicolumn{1}{c|}{153000} \\ \hline
+   \rowcolor[HTML]{C0C0C0} 
+   \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
+   \rowcolor[HTML]{C0C0C0} 
+   Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+Elementos de ferreteria(tornillos, conectores, cables, cajas estancas,etc) 
+& \multicolumn{1}{c|}{-}
+& \multicolumn{1}{c|}{-}
+& \multicolumn{1}{c|}{5000}   \\ \hline
+Circuitos integrados y electrónica discreta
+& \multicolumn{1}{c|}{-}
+& \multicolumn{1}{c|}{-}
+& \multicolumn{1}{c|}{10000}   \\ \hline
+Gastos extra de impresoras 3D y CNC (fresa, extrusor, etc)  
+& \multicolumn{1}{c|}{-}
+& \multicolumn{1}{c|}{-}
+& \multicolumn{1}{c|}{10000}   \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+\multicolumn{1}{c|}{25000} \\ \hline 
 \rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
-\rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|c|}{TOTAL} &
-   \\ \hline
+\multicolumn{1}{c|}{178000} \\ \hline
+
+%\multicolumn{3}{|c|{TOTAL} &
+%\multicolumn{1}{c|}{} \\ \hline
+%
+
 \end{tabularx}%
+
+\caption{Tabla de costos directos e indirectos en base a estimaciones iniciales del proyecto}
 \end{table}
 
 
@@ -531,28 +550,27 @@ Descripción &
 
 Riesgo 1: El sistema mecánico de movimiento de la antena no esté listo antes de la tarea 4.
 \begin{itemize}
-	\item Severidad(S) 8\newline
+	\item Severidad(S): 8.\newline
 		La severidad es alta dado que el objetivo principal del trabajo es realizar el control sobre ella.
-	\item Probabilidad de ocurrencia (O) 3 \newline
-		Esta probabilidad se asigna, ya que se han comprado todos los materiales estructurales para su construcción. Cabe destacar que su construcción 
-		esta a cargo del departamento de mecánica. 
+	\item Probabilidad de ocurrencia (O): 3. \newline
+	 Se asigna esta probabilidad dado que se han comprado los materiales estructurales para su construcción. Cabe destacar que su construcción esta a cargo del departamento de mecánica. 
 \end{itemize}
 
 Riesgo 2: El proyecto deje de estar entre los objetivos estratégicos de la institución.
 \begin{itemize}
-	\item Severidad(S) 8\newline
+	\item Severidad(S) :8.\newline
 	La severidad es alta dado que el proyecto no se terminaría en tiempo y forma pactada. Además, se asignarian los recursos del presente proyecto a otro. 
-	\item Probabilidad de ocurrencia (O) 3 \newline
+	\item Probabilidad de ocurrencia (O): 3. \newline
 	Esta probabilidad se asigna dado que una de las funciones principales es la observación del espacio mediante ondas de radio.  
 \end{itemize}
 
 
 Riesgo 3: Realizar mal la estimación de duración de las tareas. 
 \begin{itemize}
-	\item Severidad(S) 7\newline 
-	Se asigna esta puntuación debido a que se demora el prototipo funcional para solicitar nuevas fuentes de financiamiento y colaboraciónes 
+	\item Severidad(S): 7.\newline 
+	Se asigna esta puntuación debido a que se demora el prototipo funcional para solicitar nuevas fuentes de financiamiento y colaboraciónes. 
 	de radiotelescopios internacionales.  
-	\item Probabilidad de ocurrencia (O) 7\newline 
+	\item Probabilidad de ocurrencia (O): 7.\newline 
 	Alta, debido a que hay tareas a las cuales no se han en la experiencia del profesional que la realiza.  
 \end{itemize}
 
@@ -560,17 +578,17 @@ Riesgo 3: Realizar mal la estimación de duración de las tareas.
 Riesgo 4: No conseguir los componentes para realizar el rebote lunar. 
 \begin{itemize}
 	\item Severidad(S) 4\newline 
-		Si bien es deseable que se realice no afecta al funcionamiento del proyecto ni su objetivo principal. 
-	\item Probabilidad de ocurrencia (O) 4\newline 
+		Si bien es deseable su realización, no afecta al funcionamiento del proyecto ni su objetivo principal. 
+	\item Probabilidad de ocurrencia (O): 4.\newline 
 		La probabilidad es baja, porque existen los componentes y el personal calificado para llevarlo a cabo. 
 \end{itemize}
 
 Riesgo 5: Algunos de los componentes no se encuentren en el mercado local. 
 \begin{itemize}
-	\item Severidad(S) 4\newline 
+	\item Severidad(S): 4.\newline 
 		Si los componentes deben importarse, implica un retraso importante en el proyecto dado que se podrá trabajar con placas ya existentes en el laboratorio. 
 
-	\item Probabilidad de ocurrencia (O) \newline 
+	\item Probabilidad de ocurrencia (O): 7. \newline 
 	   Se plantea que la mayor parte de los componentes se encuentren en el mercado local. En caso contrario, se verá la forma de mitigar este efecto, dado que al ser una institución del estado nacional, las compras en el extranjero se fijan por ROECYT, y tiene una duración estimada de 6 meses aproximadamente. 
 \end{itemize}
 
@@ -590,9 +608,9 @@ Riesgo & S  & O  & RPN & S*  & O*   & RPN* \\ \hline
    2   & 8  & 3  &  24 & 2   & 2    &  4    \\ \hline
    3   & 7  & 7  &  49 & 7   & 7   &  14   \\ \hline
    4   & 4  & 4  &  16 &    &    &      \\ \hline
-   5   & 4  & 4  &  28 &    &    &      \\ \hline
+   5   & 4  & 4  &  16 &    &    &      \\ \hline
    
-\end{tabularx}%
+\end{tabularx}
 \end{table}
 
 Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 22 
@@ -601,22 +619,22 @@ Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean may
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
-c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
+Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
 Riesgo 1: En caso que la estructura mecánica de la antena, no se encuentre construida, hay dos antenas a escala para realizar el control. 
 \begin{enumerate}
-	\item Severidad (S) 5 \newline
+	\item Severidad (S): 5. \newline
 	Si bien el control no es el mismo se puede obtener el conocimiento sobre la forma de caracterizar sistemas de este tipo, para luego aplicarlo sobre las antenas originales del interferómetro MIA.   
-	\item Probabilidad de ocurrencia (2)\newline 
-	Dado que los materiales para su construcción están comprados, no debería llegar a ocurrir 
+	\item Probabilidad de ocurrencia(O): 2.\newline 
+	Dado que los materiales para su construcción están comprados, no debería llegar a ocurrir. 
 	
 \end{enumerate} 
 
 Riesgo 2: Se mostrarán las bondades del sistema de apuntamiento para volverlo a ubicar entre los objetivos estratégicos. 
 \begin{itemize}
-	\item Severidad (S) 2: \newline
+	\item Severidad (S): 2. \newline
 	La institución entre sus objetivos principales es realizar mejoras sobre las antenas y su electrónica en forma continua 
-	\item Probabilida de ocurrencia (O) 2: 
+	\item Probabilida de ocurrencia(O): 2. 
 	Es díficil que ocurra porque existen proyectos de colaboración internacional. 
 \end{itemize}
 
@@ -626,12 +644,13 @@ Riesgo 2: Se mostrarán las bondades del sistema de apuntamiento para volverlo a
 
 Riesgo 3: Se adicionaran horas hombre y se pedirá colaboración a los interesados.
 \begin{itemize}
-	\item Severidad (S) 7: \newline 
-	Deberán sumar personal en caso de subestimación, y en caso de sobreestimación, no se corre ningún tipo de riesgo  
-	\item Probabilidad de ocurrencia (O): 7  \newline
+	\item Severidad (S): 7. \newline 
+	Deberán sumar personal en caso de subestimación, y en caso de sobreestimación, no se corre ningún tipo de riesgo.
+	\item Probabilidad de ocurrencia (O): 7.  \newline
 	Debido al desconocimiento del estado del arte de algunas tareas por parte del diseñador del proyecto.  
 \end{itemize}
-Riesgo 4: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+
+
 
 
 
@@ -699,20 +718,27 @@ Riesgo 4: plan de mitigación (si por el RPN fuera necesario elaborar un plan de
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
+\begin{enumerate}
+	\item Análisis de seguimiento del plan original 
+		\begin{itemize}
+		\item Responsable: Gastón Valdez
+		\item Actividades: 
+			\begin{itemize}
+				\item Se analizará el nivel de cumplimiento de los requerimientos.
+				\item Comparación de fechas reales con la estimación del diagrama de gannt de la figura 	\ref{fig:diaGANTT}
+			\end{itemize}
+		\end{itemize}
+	\item Identificación de procesos útiles e inútiles
+		\begin{itemize}
+			\item Responsable: Guillermo Gancio 
+			\item Detectar de los procesos, cual de ellos puede repetirse o no en futuros desarrollos. 
+		\end{itemize}
+	\item Se dará agradecimiento a todos los interesados, y en especial al equipo de trabajo y
+	colaboradores.
+	\item Se realizará la presentación pública del proyecto, dando paso a la defensa del mismo ante jurados. 
+	\item Se subirán los informes al servidor del instituto Argentino de Radioastronomía siendo aprobados por el director y codirector. 
+\end{enumerate}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
-
-\begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-	  - Indicar esto y quién financiará los gastos correspondientes.
-\end{itemize}
-
-\end{consigna}
 
 
 \end{document}
