@@ -75,7 +75,10 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 		 Diagrama de Gannt y Activiy on Node \newline 
 		 Gestión de riesgos y gestión de la calidad \newline 
 		 Se cambia la redacción de los requerimientos 1.12 y 4.5 \newline & 29 de marzo del 2022 \\ \hline 
-		
+3	   & Se Escribe el proceso de cierre y presupuesto & 	5 de Abril de 2022 \\ \hline
+4	   & Se adicona el requerimiento funcional 1.13 y 1.14
+\newline Se vuelve a redactar la sección historias de usuario \newline Se añade una nueva forma de mitigar el riesgo 1  & 	10 de Abril de 2022 \\ \hline
+	
 		
 		
 
@@ -255,6 +258,8 @@ El proyecto no contempla aspectos relacionados a la seguridad de la información
 			\item El software realizará un reporte diario a las 5 AM con todos los datos almacenados en formato csv.  
 			\item En caso de adicionar otro programa distinto al Gpredict, Stellarium o los scripts existentes en el IAR, se debe actualizar el software del sistema posicionador. 
 			\item Solo puede realizar una operación de seguimiento. En caso de estar realizando el seguimiento de algún satelite/radiofuente, se le debe informar de dicha operación, y el operario tendrá que esperar que se termine la operación actual.  
+			\item Debe poseer un control de velocidad para realizar el seguimiento.
+			\item Los encoders deben tener una resolucion menor a diez veces el ancho de haz de antena (aproximadamente 0.2 º).
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
@@ -286,14 +291,7 @@ El proyecto no contempla aspectos relacionados a la seguridad de la información
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-%estaria bueno tener un control total sobre la antena 
-%
-%Debería tener telemetría para ver como es el estado de los instrumentos receptores 
-%
-%
-%La antena deberia poseer calibración manual y automática 
-% Deberia poder moverse en forma gráfica 
-El criterio que se utiliza para evaluar la complejidad de las  historias de usuarios (Story point) es:
+Las historias de usuario, se realizan desde la perspectiva del operador de antena y el responsable de observatorio. Estas historias contempladas en esta sección se evalúan en base a su complejidad de realización y el criterio seleccionado es el siguientes: 
 \begin{itemize}
 	\item Muy bajo: 1 puntos. 
 	\item Bajo: 2 puntos.
@@ -303,17 +301,17 @@ El criterio que se utiliza para evaluar la complejidad de las  historias de usua
 \end{itemize}
 
 \begin{itemize}
-	\item Debería tener telemetría para visualizar el estado de los instrumentos receptores.
+	\item Como operador debería tener telemetría para visualizar el estado de los instrumentos receptores y la radiofuente seguida por la antena abandonando la terminal de Linux. 
 		\begin{itemize}
 			\item Medio: 4 puntos.
 		\end{itemize}
 
-	\item Debería poder moverse en forma gráfica. 
+	\item Los operadores de antena deberían poder moverla mediante una interfaz de usuario. 
 		\begin{itemize}
 			\item Alto: 4 puntos.
 		\end{itemize}
 	
-	\item Mientras mayor control se tenga sobre la antena, mejor. 
+	\item Los operadores de antena deben tener el mayor control de configuración sobre los parámetros de la antena (posición, temperatura, viento, ajuste de tensiones, movimiento manual, control de receptores,etc). 
 		\begin{itemize}
 			\item Muy alto: 5 puntos.
 		\end{itemize}
@@ -441,24 +439,23 @@ Cantidad total de horas :  843 hs
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
-El diagrama de Activity on node, se muestra en la figura \ref{fig:AoN}, y el código de colores utilizado en el diagrama se muestre a continuación: 
+El diagrama de Activity on Node se muestra en la figura \ref{fig:AoN} y el código de colores que se usa en el diagrama se muestra a continuación: 
 \begin{figure}[H]
 	\includegraphics[width = \textwidth,height = 5.1cm]{./Figuras/AonGantt/cod_colores.jpg}
 	\caption{Código de colores utilizado en el diagrama de la figura \ref{fig:AoN}}
 \end{figure} 
 
-
-
-\begin{figure}[p]
+\begin{figure}[H]
 \centering
-\includegraphics[width = \textwidth]{./Figuras/AonGantt/ActivityOnNode.jpg}
+%[width = \textwidth, height = 15cm]
+\includegraphics[width = \textwidth, height = 17cm]{./Figuras/AonGantt/ActivityOnNode.jpg}
 \caption{Diagrama de \textit{Activity on Node}}
 \label{fig:AoN}
 \end{figure}
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
-El diagrama de gannt se muestra en la figura \ref{fig:diaGANTT}, se planifica una estimación de 30 hs semanales. Están contemplado días festivos y feriados de la República Argentina. 
+El diagrama de Gantt se muestra en la figura \ref{fig:diaGANTT}, habiéndose estimando unas 30 hs de trabajo semanales. Se han contemplado días festivos y feriados de la República Argentina. 
 
 
 \begin{figure}[H]
@@ -556,10 +553,10 @@ Riesgo 1: El sistema mecánico de movimiento de la antena no esté listo antes d
 	 Se asigna esta probabilidad dado que se han comprado los materiales estructurales para su construcción. Cabe destacar que su construcción esta a cargo del departamento de mecánica. 
 \end{itemize}
 
-Riesgo 2: El proyecto deje de estar entre los objetivos estratégicos de la institución.
+Riesgo 2: Que el proyecto deje de estar entre los objetivos estratégicos de la institución.
 \begin{itemize}
-	\item Severidad(S) :8.\newline
-	La severidad es alta dado que el proyecto no se terminaría en tiempo y forma pactada. Además, se asignarian los recursos del presente proyecto a otro. 
+	\item Severidad(S): 8.\newline
+	La severidad es alta dado que el proyecto no se terminaría en tiempo y forma pactada. Además, se asignarían los recursos del presente proyecto a otro. 
 	\item Probabilidad de ocurrencia (O): 3. \newline
 	Esta probabilidad se asigna dado que una de las funciones principales es la observación del espacio mediante ondas de radio.  
 \end{itemize}
@@ -568,28 +565,27 @@ Riesgo 2: El proyecto deje de estar entre los objetivos estratégicos de la inst
 Riesgo 3: Realizar mal la estimación de duración de las tareas. 
 \begin{itemize}
 	\item Severidad(S): 7.\newline 
-	Se asigna esta puntuación debido a que se demora el prototipo funcional para solicitar nuevas fuentes de financiamiento y colaboraciónes. 
-	de radiotelescopios internacionales.  
+	Se asigna esta puntuación debido a que se demora el prototipo funcional para solicitar nuevas fuentes de financiamiento y colaboraciones de radiotelescopios internacionales.
 	\item Probabilidad de ocurrencia (O): 7.\newline 
-	Alta, debido a que hay tareas a las cuales no se han en la experiencia del profesional que la realiza.  
+	Alta, debido a que hay tareas a las cuales no se tiene experiencia.
 \end{itemize}
 
 
 Riesgo 4: No conseguir los componentes para realizar el rebote lunar. 
 \begin{itemize}
-	\item Severidad(S) 4\newline 
+	\item Severidad(S): 4.\newline 
 		Si bien es deseable su realización, no afecta al funcionamiento del proyecto ni su objetivo principal. 
-	\item Probabilidad de ocurrencia (O): 4.\newline 
-		La probabilidad es baja, porque existen los componentes y el personal calificado para llevarlo a cabo. 
+	\item Probabilidad de ocurrencia(O): 4.\newline 
+		La probabilidad es baja porque existen los componentes y el personal calificado para llevarlo a cabo. 
 \end{itemize}
 
 Riesgo 5: Algunos de los componentes no se encuentren en el mercado local. 
 \begin{itemize}
 	\item Severidad(S): 4.\newline 
-		Si los componentes deben importarse, implica un retraso importante en el proyecto dado que se podrá trabajar con placas ya existentes en el laboratorio. 
+		Si los componentes deben importarse, implica un retraso importante en el proyecto dado que se tendrá que trabajar con placas ya existentes en el laboratorio. 
 
 	\item Probabilidad de ocurrencia (O): 7. \newline 
-	   Se plantea que la mayor parte de los componentes se encuentren en el mercado local. En caso contrario, se verá la forma de mitigar este efecto, dado que al ser una institución del estado nacional, las compras en el extranjero se fijan por ROECYT, y tiene una duración estimada de 6 meses aproximadamente. 
+	   Se plantea que la mayor parte de los componentes se encuentren en el mercado local. En caso contrario, se verá la forma de mitigar este efecto, dado que al ser una institución del estado nacional, las compras en el extranjero se fijan por ROECYT y tiene una duración estimada de 6 meses aproximadamente. 
 \end{itemize}
 
 
@@ -603,12 +599,12 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Riesgo & S  & O  & RPN & S*  & O*   & RPN* \\ \hline
-   1   & 8  & 3  &  24 & 5   & 2    & 10     \\ \hline
-   2   & 8  & 3  &  24 & 2   & 2    &  4    \\ \hline
-   3   & 7  & 7  &  49 & 7   & 7   &  14   \\ \hline
-   4   & 4  & 4  &  16 &    &    &      \\ \hline
-   5   & 4  & 4  &  16 &    &    &      \\ \hline
+Riesgo & S  & O  & RPN & S*  & O* & RPN* \\ \hline
+   1   & 8  & 3  &  24 & 5   & 2  & 10     \\ \hline
+   2   & 8  & 3  &  24 & 2   & 2  &  4    \\ \hline
+   3   & 7  & 7  &  49 & 7   & 7  &  14   \\ \hline
+   4   & 4  & 4  &  16 &     &    &      \\ \hline
+   5   & 7  & 4  &  28 & 3   & 3  &  9    \\ \hline
    
 \end{tabularx}
 \end{table}
@@ -621,10 +617,10 @@ Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplic
 
 Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: En caso que la estructura mecánica de la antena, no se encuentre construida, hay dos antenas a escala para realizar el control. 
+Riesgo 1: En caso que la estructura mecánica de la antena no se encuentre construida, hay dos antenas a escala para realizar el control. 
 \begin{enumerate}
 	\item Severidad (S): 5. \newline
-	Si bien el control no es el mismo se puede obtener el conocimiento sobre la forma de caracterizar sistemas de este tipo, para luego aplicarlo sobre las antenas originales del interferómetro MIA.   
+	Si bien el control no es el mismo, se puede obtener el conocimiento sobre la forma de caracterizar sistemas de este tipo, para luego aplicarlo sobre las antenas originales del interferómetro MIA. Adicionalmente, se puede realizar un sistema de lazo cerrado sobre un banco de trabajo.   
 	\item Probabilidad de ocurrencia(O): 2.\newline 
 	Dado que los materiales para su construcción están comprados, no debería llegar a ocurrir. 
 	
@@ -652,6 +648,14 @@ Riesgo 3: Se adicionaran horas hombre y se pedirá colaboración a los interesad
 
 
 
+Riesgo 5: Se iniciarán los desarrollos electrónicos contemplando el mercado local desde el origen del proyecto
+\begin{itemize}
+	\item Severidad (S): 3. \newline .
+	Al iniciar el proyecto contemplando los componentes electrónicos en el mercado local disminuye su severidad. 
+	\item Probabilidad de ocurrencia (O): 3.  \newline
+	Dado que se contempla realizar las compras en el mercado local la probabilidad de ocurrencia disminuye. 
+\end{itemize}
+
 
 
 
@@ -663,14 +667,14 @@ Riesgo 3: Se adicionaran horas hombre y se pedirá colaboración a los interesad
 	\begin{enumerate}
 		\item Debe tener un sistema de control de posición en dos ejes (azimuth y altura).
 				\begin{itemize}
-					\item Verificación: Se comprobará el sistema de control responda ante una referencia de posición y colocando un receptor de banda L en la antena. 
-					\item Validación: Se entregará documentación sobre el sistema y modelado matemático del mismo. 
+					\item Verificación: se comprobará que el sistema de control responda ante una referencia de posición y colocando un receptor de banda L en la antena. 
+					\item Validación: se entregará documentación sobre el sistema y modelado matemático del mismo. 
 				\end{itemize} 
 		
 		\item Debe poseer un Webserver embebido para monitoreo de variables ambientales e indicar su estado de operación (tracking, untracking, zenit, y calibrate). 
 			\begin{itemize}
-				\item Verificación:Se ingresará al webserver y se realiza un cambio de estado desde otra estación de trabajo. 
-				\item Validación: Se comprueba que el web server embebido no realice conexiónes con otras estaciones. Se entrega documentación sobre la operación a bajo nivel del mismo.  
+				\item Verificación:se ingresará al webserver y se realizará un cambio de estado desde otra estación de trabajo. 
+				\item Validación: se comprobará que el web server embebido no realice conexiónes con otras estaciones. Se entregará documentación sobre la operación a bajo nivel del mismo.  
 			\end{itemize} 
 %1.3		\item Debe implementarse lecturas de posicionamiento, lecturas de viento, temperatura y potencia consumida por el mismo. 
 %1.4		\item Debe conectarse a red local LAN, mediante cable ethernet RJ45. 
@@ -678,18 +682,18 @@ Riesgo 3: Se adicionaran horas hombre y se pedirá colaboración a los interesad
 %1.5 
 		\item Debe detener su funcionamiento cuando el viento sea superior a 50 km/h durante al menos 10 minutos y volver a su posición de equilibrio mecánico (cenit) 
 			\begin{itemize}
-				\item Verificación: Se girá el anemómetro mediante acople a un motor de corriente continua durante 10 minutos. Luego se procede a intentar movilizar la antena. Se realiza una segunda prueba, pero ubicando la antena en una posición distinta del cenit. 
-				\item Validación: Se comprueba que la antena realice las maniobras correspondientes para regresar al cenit. 
+				\item Verificación: se girará el anemómetro mediante el acople a un motor de corriente continua durante 10 minutos. Luego se procede a intentará movilizar la antena. Se realiza una segunda prueba, pero ubicando la antena en una posición diferente del cenit. 
+				\item Validación: se comprobará que la antena realice las maniobras correspondientes para regresar al cenit y no moverse. 
 			\end{itemize} 
 		\item Debe tener un sistema de calibración a demanda por el operario de la antena. 
 			\begin{itemize}
-				\item Verificación: Se entrega una manual de operación de la antena para operarios.  
-				\item Validación: Se comprueba que los operarios entiendan el manual de operación, se despejan dudas al respecto.   
+				\item Verificación: se entregará un manual de operación de la antena para operarios.  
+				\item Validación: Se comprobará que los operarios entiendan el manual de operación y se despejarán las dudas al respecto.   
 			\end{itemize} 
 		\item El software se debe conectar con los programas Gpredict, Stelarium y el existente en el IAR para el manejo de las antenas principales. 
 			\begin{itemize}
-				\item Verificación: Se conecta con Gpredict y Stellarium, y se verifica un seguimiento completo.  
-				\item Validación: Se crea un manual de uso para los operarios de estos programas y se verifica que puedan realizar el seguimiento.   
+				\item Verificación: se conectará con Gpredict y Stellarium, y se verificará un seguimiento completo.  
+				\item Validación: se creará un manual de uso para los operarios de estos programas y se verificará que puedan realizar el seguimiento.   
 			\end{itemize} 
 		
 %1 - 8 		\item El software debe manejar los periféricos del single board computer. 
@@ -699,15 +703,15 @@ Riesgo 3: Se adicionaran horas hombre y se pedirá colaboración a los interesad
 		\setcounter{enumii}{10}	
 		\item Solo puede realizar una operación de seguimiento. En caso de estar realizando el seguimiento de algún satelite/radiofuente, se le debe informar de dicha operación, y el operario tendrá que esperar que se termine la operación actual.  
 			\begin{itemize}
-				\item Verificación: Se procede a realizar una operación de seguimiento desde una estación de trabajo, mientras se encuentra en estado de tracking.   
-				\item Validación: Se comprueba el rechazo e informe al operador de la segunda PC en cuestión al intentar conectarse y mover la antena.   
+				\item Verificación: se procederá a realizar una operación de seguimiento desde una estación de trabajo, mientras la antena se encuentra en el estado de tracking.   
+				\item Validación: se comprobará el rechazo e informe al operador de la segunda PC en cuestión al intentarse conectar y mover la antena.   
 			\end{itemize} 
 	\end{enumerate}
 
 \item Requerimientos de documentación 
 \begin{itemize}
 
-	\item Verificación: Se completan todos los entregables del proyecto sujeto a correcciones por parte de miembros de la organización.  
+	\item Verificación: Se completarán todos los entregables del proyecto sujeto a correcciones por parte de los miembros de la organización.  
 	\item Validación: Se procede con el alta de documentación en el sistema SIGEVA del CONICET. 
 
 \end{itemize}
